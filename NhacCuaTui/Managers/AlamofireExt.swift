@@ -67,11 +67,11 @@ extension DataRequest {
 }
 
 protocol ResponseCollectionSerializable {
-    static func collection(from response: HTTPURLResponse?, withRepresentation representation: Any) -> [Self]
+    static func collection(from response: HTTPURLResponse?, withRepresentation representation: Any?) -> [Self]
 }
 
 extension ResponseCollectionSerializable where Self: ResponseObjectSerializable {
-    static func collection(from response: HTTPURLResponse?, withRepresentation representation: Any) -> [Self] {
+    static func collection(from response: HTTPURLResponse?, withRepresentation representation: Any?) -> [Self] {
         var collection: [Self] = []
         
         if let representation = representation as? [[String: Any]] {

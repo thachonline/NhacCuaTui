@@ -13,6 +13,7 @@
 		862D8CBB1E8B4CF000BD0238 /* NCTGridViewRow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 862D8CB91E8B4CF000BD0238 /* NCTGridViewRow.xib */; };
 		862D8CBD1E8B4DE000BD0238 /* NCTGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862D8CBC1E8B4DE000BD0238 /* NCTGridView.swift */; };
 		862D8CBF1E8B5C6900BD0238 /* NCTGridViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 862D8CBE1E8B5C6900BD0238 /* NCTGridViewCell.xib */; };
+		86451DD61E91FE01005C3CEB /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86451DD51E91FE01005C3CEB /* Playlist.swift */; };
 		864F18571E8C9E8E001B5891 /* NCTGridViewAlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864F18561E8C9E8E001B5891 /* NCTGridViewAlbumCell.swift */; };
 		864F18591E8C9EA2001B5891 /* NCTGridViewAlbumCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 864F18581E8C9EA2001B5891 /* NCTGridViewAlbumCell.xib */; };
 		864F185D1E8CBEF1001B5891 /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864F185C1E8CBEF1001B5891 /* AppInfo.swift */; };
@@ -63,6 +64,7 @@
 		862D8CB91E8B4CF000BD0238 /* NCTGridViewRow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NCTGridViewRow.xib; sourceTree = "<group>"; };
 		862D8CBC1E8B4DE000BD0238 /* NCTGridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NCTGridView.swift; sourceTree = "<group>"; };
 		862D8CBE1E8B5C6900BD0238 /* NCTGridViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NCTGridViewCell.xib; sourceTree = "<group>"; };
+		86451DD51E91FE01005C3CEB /* Playlist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
 		864F18561E8C9E8E001B5891 /* NCTGridViewAlbumCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NCTGridViewAlbumCell.swift; sourceTree = "<group>"; };
 		864F18581E8C9EA2001B5891 /* NCTGridViewAlbumCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NCTGridViewAlbumCell.xib; sourceTree = "<group>"; };
 		864F185C1E8CBEF1001B5891 /* AppInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				864F185F1E8CC385001B5891 /* NCTUser.swift */,
 				86E48DE61E8E39A200789F94 /* APIResponseData.swift */,
 				86E48DE81E8E4E4F00789F94 /* Video.swift */,
+				86451DD51E91FE01005C3CEB /* Playlist.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -550,6 +553,7 @@
 				862D8CB71E8B4CC800BD0238 /* NCTGridViewCell.swift in Sources */,
 				86E48DE71E8E39A200789F94 /* APIResponseData.swift in Sources */,
 				86BBE0A21E88A7A8008CBDA9 /* AppDelegate.swift in Sources */,
+				86451DD61E91FE01005C3CEB /* Playlist.swift in Sources */,
 				864F18671E8CF9FF001B5891 /* StringExt.swift in Sources */,
 				864F185D1E8CBEF1001B5891 /* AppInfo.swift in Sources */,
 				864F18621E8CEB5C001B5891 /* ApiConnector.swift in Sources */,

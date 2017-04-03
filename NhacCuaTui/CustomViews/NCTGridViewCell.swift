@@ -7,13 +7,20 @@
 //
 
 import UIKit
-
+import SDWebImage
 class NCTGridViewCell: UICollectionViewCell {
     @IBOutlet weak var topGradientView: UIView!
-    
     @IBOutlet weak var bottomGradientView: UIView!
-    @IBOutlet weak var lblSinger: UILabel!
     
+    @IBOutlet weak var lblSinger: UILabel!
+    @IBOutlet weak var lblSongName: UILabel!
+    @IBOutlet weak var lblTime: UILabel!
+    @IBOutlet weak var lblViews: UILabel!
+    @IBOutlet weak var viewRank: UIView!
+    @IBOutlet weak var lblRank: UILabel!
+    @IBOutlet weak var imgThump: UIImageView!
+    
+
     
     @IBOutlet weak var containerView: UIView!
     
@@ -42,6 +49,19 @@ class NCTGridViewCell: UICollectionViewCell {
         self.bottomGradientView.layer.insertSublayer(gradidentLayerBottom, at: 0)
         
         
+    }
+    
+    func setVideo(video:Video?) {
+        if let vid = video {
+            self.lblTime.text = vid.time
+            self.lblViews.text = "\(vid.views)"
+            self.lblSinger.text = vid.artistName
+            self.lblSongName.text = vid.videoTitle
+            
+            let imgURL = vid.videoImage.replacingOccurrences(of: ".jpg", with: "_640.jpg")
+            
+            self.imgThump.sd_setImage(with: URL(string: imgURL), placeholderImage: UIImage(named: "TempPlaceholder"), options: .refreshCached)
+        }
     }
     
 }

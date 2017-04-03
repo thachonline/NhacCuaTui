@@ -11,11 +11,18 @@ import UIKit
 class HomeViewController: NCTBaseViewController, NCTGridViewDelegate{
 
     @IBOutlet weak var gridHome: NCTGridView!
-
+    var homeData:(mvs : [Video],clips : [Video], albums : [Playlist], karaoke : [Video] ) = (mvs : [],clips : [], albums : [], karaoke : [] )
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.gridHome.delegate  = self
+        
+        ApiConnector.shared.getHomeData(completionBlock: { [unowned self] (homeData) in
+            self.homeData = homeData
+            self.gridHome.reloadData()
+        }) { (errorCode) in
+            print(errorCode ?? -1)
+        }
     }
 
 
@@ -42,7 +49,19 @@ class HomeViewController: NCTBaseViewController, NCTGridViewDelegate{
     }
     
     func nctGridView(_ nctTableView: NCTGridView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        
+        switch section {
+        case 0:
+            return self.homeData.mvs.count
+        case 1 :
+            return self.homeData.clips.count
+        case 2 :
+            return self.homeData.albums.count
+        case 3 :
+            return self.homeData.karaoke.count
+        default:
+            return 0
+        }
     }
     
     func nctGridView(_ nctGridView: NCTGridView, didSelectItemAtIndexPath indexPath: IndexPath) {
@@ -59,12 +78,24 @@ class HomeViewController: NCTBaseViewController, NCTGridViewDelegate{
     func nctGridView(_ nctGridView: NCTGridView, willDisplayCell cell: UICollectionViewCell, atIndexPath indexPath: IndexPath) {
         if cell is NCTGridViewCell {
             let gridCell = cell as! NCTGridViewCell
-            gridCell.lblSinger.text = "\(indexPath.section) : \(indexPath.row)"
+            switch indexPath.section {
+            case 0:
+                gridCell.setVideo(video: self.homeData.mvs[indexPath.row])
+                break
+            case 1:
+                gridCell.setVideo(video: self.homeData.clips[indexPath.row])
+                break
+            case 3:
+                gridCell.setVideo(video: self.homeData.karaoke[indexPath.row])
+                break
+            default:
+                break
+            }
         }
         
-        if cell is NCTGridViewAlbumCell {
+        if cell is NCTGridViewAlbumCell && indexPath.section == 2{
             let gridCell = cell as! NCTGridViewAlbumCell
-            
+            gridCell.setAlbum(album: self.homeData.albums[indexPath.row])
         }
     }
     
@@ -73,7 +104,18 @@ class HomeViewController: NCTBaseViewController, NCTGridViewDelegate{
     }
     
     func nctGridView(_ nctGridView: NCTGridView, titleForHeaderIn section: Int) -> String {
-        return "section : \(section)"
+        switch section {
+        case 0:
+            return "Video Hot"
+        case 1 :
+            return "Giải Trí"
+        case 2 :
+            return "Album Hot"
+        case 3 :
+            return "Karaoke"
+        default:
+            return ""
+        }
     }
     
     func nctGridView(_ nctGridView: NCTGridView, nextFocused cell: UICollectionViewCell?) {

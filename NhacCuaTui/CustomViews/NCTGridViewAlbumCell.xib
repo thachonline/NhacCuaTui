@@ -86,6 +86,9 @@
             <size key="customSize" width="398" height="498"/>
             <connections>
                 <outlet property="containerView" destination="cbf-H6-la1" id="xNm-K6-D1r"/>
+                <outlet property="imgThump" destination="ng2-XI-O21" id="XLe-FM-RvE"/>
+                <outlet property="lblAlbumName" destination="TUC-qH-9qs" id="T4X-OZ-EsH"/>
+                <outlet property="lblViews" destination="LDj-NA-A2A" id="qy2-Uo-s4b"/>
                 <outlet property="topGradientView" destination="5yL-tK-FEH" id="CZj-k9-3eV"/>
             </connections>
             <point key="canvasLocation" x="258" y="272"/>

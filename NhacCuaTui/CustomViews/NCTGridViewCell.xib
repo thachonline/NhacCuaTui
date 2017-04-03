@@ -38,7 +38,7 @@
                                 <color key="textColor" red="0.41960784313725491" green="0.43529411764705883" blue="0.43529411764705883" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ijd-nR-FJc">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ijd-nR-FJc">
                                 <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pr9-r2-6tt">
@@ -126,8 +126,14 @@
             <connections>
                 <outlet property="bottomGradientView" destination="11Q-8R-p1a" id="7XL-9y-col"/>
                 <outlet property="containerView" destination="bs6-1m-vtZ" id="4vH-a4-y7F"/>
+                <outlet property="imgThump" destination="Jp8-Sv-48F" id="dGs-9u-Z3O"/>
+                <outlet property="lblRank" destination="Pr9-r2-6tt" id="jMd-e3-QKE"/>
                 <outlet property="lblSinger" destination="LmZ-16-sNG" id="Usf-ke-qvS"/>
+                <outlet property="lblSongName" destination="VS0-WE-VaJ" id="iDB-3m-SS2"/>
+                <outlet property="lblTime" destination="pSk-Qu-6dr" id="1DA-FJ-0tM"/>
+                <outlet property="lblViews" destination="TJ4-JF-Xox" id="o8S-SZ-ket"/>
                 <outlet property="topGradientView" destination="ZCb-Uw-h6O" id="3e6-Xl-aMy"/>
+                <outlet property="viewRank" destination="ijd-nR-FJc" id="S5S-hS-1jF"/>
             </connections>
             <point key="canvasLocation" x="2" y="246"/>
         </collectionViewCell>

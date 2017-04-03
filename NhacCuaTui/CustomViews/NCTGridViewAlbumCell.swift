@@ -7,11 +7,17 @@
 //
 
 import UIKit
+import SDWebImage
 
 class NCTGridViewAlbumCell: UICollectionViewCell {
     @IBOutlet weak var topGradientView: UIView!
     @IBOutlet weak var containerView: UIView!
     
+    @IBOutlet weak var imgThump: UIImageView!
+    
+    @IBOutlet weak var lblViews: UILabel!
+    
+    @IBOutlet weak var lblAlbumName: UILabel!
     override func didMoveToSuperview() {
         super.didMoveToSuperview()
         //25 31 39
@@ -30,6 +36,17 @@ class NCTGridViewAlbumCell: UICollectionViewCell {
         gradientLayerTop.anchorPoint = CGPoint.zero
         self.topGradientView.layer.insertSublayer(gradientLayerTop, at: 0)
   
+    }
+    
+    func setAlbum(album : Playlist?) {
+        if let al = album {
+                self.lblViews.text = "\(al.plays)"
+                self.lblAlbumName.text = al.playlistTitle
+            
+            let imgURL = al.playlistImage.replacingOccurrences(of: ".jpg", with: "_500.jpg")
+            
+            self.imgThump.sd_setImage(with: URL(string: imgURL), placeholderImage: UIImage(named: "TempAlbum"), options: .refreshCached)
+        }
     }
     
 }

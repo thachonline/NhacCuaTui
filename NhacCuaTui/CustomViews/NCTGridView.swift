@@ -48,6 +48,11 @@ class NCTGridView: UIView , UITableViewDataSource, UITableViewDelegate , NCTGrid
         
     }
     
+    func reloadData() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
     
     //MARK: - TABLEVIEW
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
