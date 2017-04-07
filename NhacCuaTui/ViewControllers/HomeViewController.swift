@@ -12,19 +12,25 @@ class HomeViewController: NCTBaseViewController, NCTGridViewDelegate{
 
     @IBOutlet weak var gridHome: NCTGridView!
     var homeData:(mvs : [Video],clips : [Video], albums : [Playlist], karaoke : [Video] ) = (mvs : [],clips : [], albums : [], karaoke : [] )
+    
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.gridHome.delegate  = self
-        
         ApiConnector.shared.getHomeData(completionBlock: { [unowned self] (homeData) in
             self.homeData = homeData
             self.gridHome.reloadData()
+            self.baseDelegate?.requestToFocus(view: self.gridHome.tableView)
         }) { (errorCode) in
             print(errorCode ?? -1)
         }
+        
     }
+    
 
+    
 
 
   
@@ -65,7 +71,18 @@ class HomeViewController: NCTBaseViewController, NCTGridViewDelegate{
     }
     
     func nctGridView(_ nctGridView: NCTGridView, didSelectItemAtIndexPath indexPath: IndexPath) {
-        
+        switch indexPath.section {
+        case 0,1,3:
+            if let videoVC = self.storyboard?.instantiateViewController(withIdentifier: idVideoViewController) as? VideoViewController {
+                mRootVC?.present(videoVC, animated: true, completion: nil)
+            }
+            break
+        case 2:
+            
+            break
+        default:
+            break
+        }
     }
     
     func nctGridView(_ nctGridView: NCTGridView, sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize {

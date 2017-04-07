@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="appleTV" orientation="landscape">
         <adaptation id="dark"/>
     </device>
     <dependencies>
         <deployment identifier="tvOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -55,8 +55,32 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jB0-OW-p4r" userLabel="MenuDrawerHandler">
+                                <rect key="frame" x="0.0" y="0.0" width="128" height="1080"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TempIcon" translatesAutoresizingMaskIntoConstraints="NO" id="kQx-qL-uGi">
+                                        <rect key="frame" x="32" y="32" width="64" height="64"/>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NT3-C3-Z4o" customClass="FocusableView" customModule="NhacCuaTui" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="1" height="1080"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="1" id="6BY-jT-e1z"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.26666666666666666" green="0.42352941176470588" blue="0.59999999999999998" alpha="0.90194242294520544" colorSpace="custom" customColorSpace="adobeRGB1998"/>
+                                <constraints>
+                                    <constraint firstItem="NT3-C3-Z4o" firstAttribute="top" secondItem="jB0-OW-p4r" secondAttribute="top" id="Bse-Lk-Ulf"/>
+                                    <constraint firstAttribute="bottom" secondItem="NT3-C3-Z4o" secondAttribute="bottom" id="Nny-La-spR"/>
+                                    <constraint firstItem="kQx-qL-uGi" firstAttribute="top" secondItem="jB0-OW-p4r" secondAttribute="top" constant="32" id="SP5-GF-BSp"/>
+                                    <constraint firstItem="kQx-qL-uGi" firstAttribute="centerX" secondItem="jB0-OW-p4r" secondAttribute="centerX" id="chE-gz-pz5"/>
+                                    <constraint firstItem="NT3-C3-Z4o" firstAttribute="leading" secondItem="jB0-OW-p4r" secondAttribute="leading" id="n4X-DK-uhU"/>
+                                    <constraint firstAttribute="width" constant="128" id="wTv-WL-HkA"/>
+                                </constraints>
+                            </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="giN-Ci-YQb" userLabel="MenuDrawer">
-                                <rect key="frame" x="0.0" y="0.0" width="512" height="1080"/>
+                                <rect key="frame" x="-512" y="0.0" width="512" height="1080"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Temp" translatesAutoresizingMaskIntoConstraints="NO" id="EYP-Aj-hF9">
                                         <rect key="frame" x="96" y="32" width="96" height="96"/>
@@ -77,53 +101,53 @@
                                         <color key="textColor" red="0.95294117647058818" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SOs-uV-NGk">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SOs-uV-NGk" customClass="NCTMenuButton" customModule="NhacCuaTui" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="160" width="512" height="104"/>
-                                        <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
-                                        <inset key="imageEdgeInsets" minX="-96" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="contentEdgeInsets" minX="80" minY="20" maxX="40" maxY="20"/>
+                                        <inset key="imageEdgeInsets" minX="-40" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="Nhạc Của Tui" image="TempIcon"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UTO-cQ-pGy">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UTO-cQ-pGy" customClass="NCTMenuButton" customModule="NhacCuaTui" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="264" width="512" height="104"/>
-                                        <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
-                                        <inset key="imageEdgeInsets" minX="-96" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="Button" image="TempIcon"/>
+                                        <inset key="contentEdgeInsets" minX="80" minY="20" maxX="40" maxY="20"/>
+                                        <inset key="imageEdgeInsets" minX="-40" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Tìm Kiếm" image="TempIcon"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F6N-qP-3od">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F6N-qP-3od" customClass="NCTMenuButton" customModule="NhacCuaTui" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="368" width="512" height="104"/>
-                                        <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
-                                        <inset key="imageEdgeInsets" minX="-96" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="Button" image="TempIcon"/>
+                                        <inset key="contentEdgeInsets" minX="80" minY="20" maxX="40" maxY="20"/>
+                                        <inset key="imageEdgeInsets" minX="-40" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Trang Chủ" image="TempIcon"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9mO-GE-pmx">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9mO-GE-pmx" customClass="NCTMenuButton" customModule="NhacCuaTui" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="472" width="512" height="104"/>
-                                        <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
-                                        <inset key="imageEdgeInsets" minX="-96" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="Button" image="TempIcon"/>
+                                        <inset key="contentEdgeInsets" minX="80" minY="20" maxX="40" maxY="20"/>
+                                        <inset key="imageEdgeInsets" minX="-40" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Video" image="TempIcon"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zjy-O4-U8i">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zjy-O4-U8i" customClass="NCTMenuButton" customModule="NhacCuaTui" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="576" width="512" height="104"/>
-                                        <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
-                                        <inset key="imageEdgeInsets" minX="-96" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="Button" image="TempIcon"/>
+                                        <inset key="contentEdgeInsets" minX="80" minY="20" maxX="40" maxY="20"/>
+                                        <inset key="imageEdgeInsets" minX="-40" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Playlist" image="TempIcon"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Xn-t7-6oG">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Xn-t7-6oG" customClass="NCTMenuButton" customModule="NhacCuaTui" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="680" width="512" height="104"/>
-                                        <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
-                                        <inset key="imageEdgeInsets" minX="-96" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="Button" image="TempIcon"/>
+                                        <inset key="contentEdgeInsets" minX="80" minY="20" maxX="40" maxY="20"/>
+                                        <inset key="imageEdgeInsets" minX="-40" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="BXH" image="TempIcon"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7sy-B2-nWu">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7sy-B2-nWu" customClass="NCTMenuButton" customModule="NhacCuaTui" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="784" width="512" height="104"/>
-                                        <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
-                                        <inset key="imageEdgeInsets" minX="-96" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="Button" image="TempIcon"/>
+                                        <inset key="contentEdgeInsets" minX="80" minY="20" maxX="40" maxY="20"/>
+                                        <inset key="imageEdgeInsets" minX="-40" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Chủ Đề" image="TempIcon"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9bS-by-iPz">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9bS-by-iPz" customClass="NCTMenuButton" customModule="NhacCuaTui" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="888" width="512" height="104"/>
-                                        <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
-                                        <inset key="imageEdgeInsets" minX="-96" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="Button" image="TempIcon"/>
+                                        <inset key="contentEdgeInsets" minX="80" minY="20" maxX="40" maxY="20"/>
+                                        <inset key="imageEdgeInsets" minX="-40" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Cài Đặt" image="TempIcon"/>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.31372549019607843" green="0.50980392156862742" blue="0.72941176470588232" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
@@ -159,25 +183,11 @@
                                     <constraint firstItem="9bS-by-iPz" firstAttribute="top" secondItem="7sy-B2-nWu" secondAttribute="bottom" id="zqp-D7-E09"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jB0-OW-p4r" userLabel="MenuDrawerHandler">
-                                <rect key="frame" x="0.0" y="0.0" width="128" height="1080"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TempIcon" translatesAutoresizingMaskIntoConstraints="NO" id="kQx-qL-uGi">
-                                        <rect key="frame" x="32" y="32" width="64" height="64"/>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" red="0.26666666666666666" green="0.42352941176470588" blue="0.59999999999999998" alpha="0.90194242294520544" colorSpace="custom" customColorSpace="adobeRGB1998"/>
-                                <constraints>
-                                    <constraint firstItem="kQx-qL-uGi" firstAttribute="top" secondItem="jB0-OW-p4r" secondAttribute="top" constant="32" id="SP5-GF-BSp"/>
-                                    <constraint firstItem="kQx-qL-uGi" firstAttribute="centerX" secondItem="jB0-OW-p4r" secondAttribute="centerX" id="chE-gz-pz5"/>
-                                    <constraint firstAttribute="width" constant="128" id="wTv-WL-HkA"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Q4J-Hr-teG" secondAttribute="trailing" id="1lm-kl-jAQ"/>
-                            <constraint firstItem="giN-Ci-YQb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="60S-1D-9lF"/>
+                            <constraint firstItem="giN-Ci-YQb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="-512" id="60S-1D-9lF"/>
                             <constraint firstItem="woa-06-HUJ" firstAttribute="leading" secondItem="jB0-OW-p4r" secondAttribute="trailing" id="8cj-On-QD0"/>
                             <constraint firstItem="jB0-OW-p4r" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="9Mo-vz-0hj"/>
                             <constraint firstItem="jB0-OW-p4r" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Cux-HE-Y7o"/>
@@ -196,11 +206,39 @@
                     </view>
                     <connections>
                         <outlet property="contentView" destination="Q4J-Hr-teG" id="Urk-Na-PLA"/>
+                        <outlet property="csMenuDrawerLead" destination="60S-1D-9lF" id="k2y-fe-lZ8"/>
+                        <outlet property="drawerHandlerTrigger" destination="NT3-C3-Z4o" id="vuW-7P-ljk"/>
+                        <outlet property="menuDrawer" destination="giN-Ci-YQb" id="c6h-4v-hL4"/>
                         <outlet property="menuDrawerHandler" destination="jB0-OW-p4r" id="B7B-rj-IKk"/>
+                        <outletCollection property="menuButtons" destination="SOs-uV-NGk" collectionClass="NSMutableArray" id="6pA-Ps-z3M"/>
+                        <outletCollection property="menuButtons" destination="F6N-qP-3od" collectionClass="NSMutableArray" id="gY5-ar-HID"/>
+                        <outletCollection property="menuButtons" destination="9mO-GE-pmx" collectionClass="NSMutableArray" id="4Nz-Gh-eKt"/>
+                        <outletCollection property="menuButtons" destination="zjy-O4-U8i" collectionClass="NSMutableArray" id="KKb-N3-ezC"/>
+                        <outletCollection property="menuButtons" destination="2Xn-t7-6oG" collectionClass="NSMutableArray" id="hU3-ea-HS7"/>
+                        <outletCollection property="menuButtons" destination="7sy-B2-nWu" collectionClass="NSMutableArray" id="OEB-Zs-AlI"/>
+                        <outletCollection property="menuButtons" destination="9bS-by-iPz" collectionClass="NSMutableArray" id="a0M-6a-dTe"/>
+                        <outletCollection property="menuButtons" destination="UTO-cQ-pGy" collectionClass="NSMutableArray" id="95K-Ek-8Ls"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Video View Controller-->
+        <scene sceneID="FJO-kQ-DFJ">
+            <objects>
+                <viewController storyboardIdentifier="VideoViewController" id="DK3-XC-KXU" customClass="VideoViewController" customModule="NhacCuaTui" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fj8-Em-ETO"/>
+                        <viewControllerLayoutGuide type="bottom" id="Wlc-sK-5Ql"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="n6x-Ww-Zif">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ndU-4H-tqJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2050" y="72"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="gfz-Gx-dzC">

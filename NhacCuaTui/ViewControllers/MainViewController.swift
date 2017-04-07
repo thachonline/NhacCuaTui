@@ -8,31 +8,63 @@
 
 import UIKit
 
-class MainViewController: NCTBaseViewController {
+
+
+class MainViewController: NCTBaseViewController, NCTBaseViewControllerDelegate {
     @IBOutlet weak var menuDrawerHandler: UIView!
     
+    @IBOutlet weak var menuDrawer: UIView!
     @IBOutlet weak var contentView: UIView!
-    
-    override var preferredFocusEnvironments: [UIFocusEnvironment] {
-        return self.contentView.subviews
-    }
+
+    @IBOutlet weak var drawerHandlerTrigger: FocusableView!
     
     lazy var homeVC : HomeViewController = {
         return self.storyboard?.instantiateViewController(withIdentifier: idHomeViewController) as! HomeViewController
     }()
-    
+
+    @IBOutlet var menuButtons : [NCTMenuButton]!
+    //default 500
+    @IBOutlet weak var csMenuDrawerLead: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         
+        //prevent menu from toggling in on first load
+        self.drawerHandlerTrigger.isUserInteractionEnabled = false
         self.contentView.addSubview(self.homeVC.view)
         self.homeVC.view.didMoveToSuperview()
+        self.homeVC.baseDelegate = self
+        
+        
+    }
+
+    func toggleDrawerMenu(toggleIn : Bool) {
+        self.menuDrawer.isUserInteractionEnabled = false
+        self.menuDrawerHandler.isUserInteractionEnabled = false
+        self.menuDrawer.isHidden = false
+        self.csMenuDrawerLead.constant = toggleIn ? 0 : -512
+        UIView.animate(withDuration: 0.2, animations: {
+            self.view.layoutIfNeeded()
+            
+            
+        }) { (completed) in
+            if completed {
+            self.view.layoutIfNeeded()
+                self.menuDrawer.isUserInteractionEnabled = true
+                self.menuDrawerHandler.isUserInteractionEnabled = true
+                if toggleIn == false {
+                    self.menuDrawer.isHidden = true
+                    
+                }
+                else {
+                    self.viewToFocus = self.menuButtons.first
+                }
+                
+                
+                
+                self.menuDrawerHandler.isHidden = toggleIn
+            }
+        }
     }
     
     // MARK: -RC events
@@ -52,7 +84,27 @@ class MainViewController: NCTBaseViewController {
     }
     
     override func didUpdateFocus(in context: UIFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
+        if context.nextFocusedItem === self.drawerHandlerTrigger {
+            self.toggleDrawerMenu(toggleIn: true)
+        }
         
+        //close menu when menu btn lost focus
+        if !(context.nextFocusedItem is NCTMenuButton) && context.previouslyFocusedItem is NCTMenuButton && self.csMenuDrawerLead.constant == 0 {
+            self.toggleDrawerMenu(toggleIn: false)
+        }
     }
+    
+    //NCTBaseViewControllerDelegate
+    func requestToFocus(view: UIView) {
+        self.viewToFocus = view
+        
+        //prevent menu from toggling in on the first load
+        let deadlineTime = DispatchTime.now() + 0.1
+        DispatchQueue.main.asyncAfter(deadline: deadlineTime) {
+            self.drawerHandlerTrigger.isUserInteractionEnabled = true
+        }
+    }
+    
+    
 
 }

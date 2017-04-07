@@ -7,6 +7,11 @@
 //
 
 import Foundation
+import UIKit
+
+let mAppDelegate = UIApplication.shared.delegate as! AppDelegate
+let mRootVC = mAppDelegate.window?.rootViewController
 let idNCTGridViewCell = "NCTGridViewCell"
 let idNCTGridViewAlbumCell = "NCTGridViewAlbumCell"
 let idHomeViewController = "HomeViewController"
+let idVideoViewController = "VideoViewController"

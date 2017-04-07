@@ -20,7 +20,6 @@
 		864F18601E8CC385001B5891 /* NCTUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864F185F1E8CC385001B5891 /* NCTUser.swift */; };
 		864F18621E8CEB5C001B5891 /* ApiConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864F18611E8CEB5C001B5891 /* ApiConnector.swift */; };
 		864F18641E8CF5BE001B5891 /* AlamofireExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864F18631E8CF5BE001B5891 /* AlamofireExt.swift */; };
-		864F18671E8CF9FF001B5891 /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864F18661E8CF9FF001B5891 /* StringExt.swift */; };
 		8653E4BF1E8A0832007D642A /* NCTBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8653E4BE1E8A0832007D642A /* NCTBaseViewController.swift */; };
 		8653E4C11E8A0BE3007D642A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8653E4C01E8A0BE3007D642A /* MainViewController.swift */; };
 		8653E4C31E8A0CEE007D642A /* VCIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8653E4C21E8A0CEE007D642A /* VCIdentifiers.swift */; };
@@ -31,6 +30,12 @@
 		86BBE0A91E88A7A8008CBDA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86BBE0A81E88A7A8008CBDA9 /* Assets.xcassets */; };
 		86BBE0B41E88A7A8008CBDA9 /* NhacCuaTuiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BBE0B31E88A7A8008CBDA9 /* NhacCuaTuiTests.swift */; };
 		86BBE0BF1E88A7A8008CBDA9 /* NhacCuaTuiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BBE0BE1E88A7A8008CBDA9 /* NhacCuaTuiUITests.swift */; };
+		86C1A0201E9490A800266D83 /* NCTMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C1A01F1E9490A800266D83 /* NCTMenuButton.swift */; };
+		86C1A0251E94E27900266D83 /* NCTPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C1A0231E94E27900266D83 /* NCTPlayerViewController.swift */; };
+		86C1A0261E94E27900266D83 /* NCTPlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86C1A0241E94E27900266D83 /* NCTPlayerViewController.xib */; };
+		86D810321E9733E3002631F4 /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D810311E9733E3002631F4 /* StringExt.swift */; };
+		86D810361E9748C9002631F4 /* MediaPlayerLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D810351E9748C9002631F4 /* MediaPlayerLoader.swift */; };
+		86D810381E974AB2002631F4 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D810371E974AB2002631F4 /* VideoViewController.swift */; };
 		86E48DE71E8E39A200789F94 /* APIResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E48DE61E8E39A200789F94 /* APIResponseData.swift */; };
 		86E48DE91E8E4E4F00789F94 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E48DE81E8E4E4F00789F94 /* Video.swift */; };
 		8C715218B4387F9CAC5A2268 /* Pods_NhacCuaTuiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9827A2CE5770F22B71E7D2BA /* Pods_NhacCuaTuiTests.framework */; };
@@ -71,7 +76,6 @@
 		864F185F1E8CC385001B5891 /* NCTUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NCTUser.swift; sourceTree = "<group>"; };
 		864F18611E8CEB5C001B5891 /* ApiConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiConnector.swift; sourceTree = "<group>"; };
 		864F18631E8CF5BE001B5891 /* AlamofireExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireExt.swift; sourceTree = "<group>"; };
-		864F18661E8CF9FF001B5891 /* StringExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
 		864F18681E8CFD0D001B5891 /* NhacCuaTui-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NhacCuaTui-Bridging-Header.h"; sourceTree = "<group>"; };
 		8653E4BE1E8A0832007D642A /* NCTBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NCTBaseViewController.swift; sourceTree = "<group>"; };
 		8653E4C01E8A0BE3007D642A /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +93,12 @@
 		86BBE0BA1E88A7A8008CBDA9 /* NhacCuaTuiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NhacCuaTuiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		86BBE0BE1E88A7A8008CBDA9 /* NhacCuaTuiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NhacCuaTuiUITests.swift; sourceTree = "<group>"; };
 		86BBE0C01E88A7A9008CBDA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		86C1A01F1E9490A800266D83 /* NCTMenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NCTMenuButton.swift; sourceTree = "<group>"; };
+		86C1A0231E94E27900266D83 /* NCTPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NCTPlayerViewController.swift; sourceTree = "<group>"; };
+		86C1A0241E94E27900266D83 /* NCTPlayerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NCTPlayerViewController.xib; sourceTree = "<group>"; };
+		86D810311E9733E3002631F4 /* StringExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
+		86D810351E9748C9002631F4 /* MediaPlayerLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaPlayerLoader.swift; sourceTree = "<group>"; };
+		86D810371E974AB2002631F4 /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		86E48DE61E8E39A200789F94 /* APIResponseData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIResponseData.swift; sourceTree = "<group>"; };
 		86E48DE81E8E4E4F00789F94 /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		933207B16C6BC18BF983B83A /* Pods_NhacCuaTui.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NhacCuaTui.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,14 +168,6 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
-		864F18651E8CF9F0001B5891 /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				864F18661E8CF9FF001B5891 /* StringExt.swift */,
-			);
-			path = Utilities;
-			sourceTree = "<group>";
-		};
 		866AF6E41E88EF42001B92C5 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -177,6 +179,7 @@
 				862D8CBC1E8B4DE000BD0238 /* NCTGridView.swift */,
 				864F18561E8C9E8E001B5891 /* NCTGridViewAlbumCell.swift */,
 				864F18581E8C9EA2001B5891 /* NCTGridViewAlbumCell.xib */,
+				86C1A01F1E9490A800266D83 /* NCTMenuButton.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -206,7 +209,7 @@
 		86BBE0A01E88A7A8008CBDA9 /* NhacCuaTui */ = {
 			isa = PBXGroup;
 			children = (
-				864F18651E8CF9F0001B5891 /* Utilities */,
+				86D810301E9733E3002631F4 /* Helpers */,
 				864F185E1E8CC364001B5891 /* Entities */,
 				864F185B1E8CBE46001B5891 /* Accessories */,
 				866AF6E41E88EF42001B92C5 /* CustomViews */,
@@ -245,8 +248,20 @@
 				8653E4BE1E8A0832007D642A /* NCTBaseViewController.swift */,
 				8653E4C01E8A0BE3007D642A /* MainViewController.swift */,
 				8653E4C21E8A0CEE007D642A /* VCIdentifiers.swift */,
+				86C1A0231E94E27900266D83 /* NCTPlayerViewController.swift */,
+				86C1A0241E94E27900266D83 /* NCTPlayerViewController.xib */,
+				86D810371E974AB2002631F4 /* VideoViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		86D810301E9733E3002631F4 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				86D810311E9733E3002631F4 /* StringExt.swift */,
+				86D810351E9748C9002631F4 /* MediaPlayerLoader.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		D31CD582DFAC3506807BC035 /* Pods */ = {
@@ -341,6 +356,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 5636JWQJGM;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes.appletvos = {
+								enabled = 1;
+							};
+						};
 					};
 					86BBE0AE1E88A7A8008CBDA9 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -382,6 +402,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				862D8CBF1E8B5C6900BD0238 /* NCTGridViewCell.xib in Resources */,
+				86C1A0261E94E27900266D83 /* NCTPlayerViewController.xib in Resources */,
 				862D8CBB1E8B4CF000BD0238 /* NCTGridViewRow.xib in Resources */,
 				86BBE0A91E88A7A8008CBDA9 /* Assets.xcassets in Resources */,
 				86BBE0A71E88A7A8008CBDA9 /* Main.storyboard in Resources */,
@@ -549,18 +570,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				864F18601E8CC385001B5891 /* NCTUser.swift in Sources */,
+				86D810361E9748C9002631F4 /* MediaPlayerLoader.swift in Sources */,
 				864F18571E8C9E8E001B5891 /* NCTGridViewAlbumCell.swift in Sources */,
 				862D8CB71E8B4CC800BD0238 /* NCTGridViewCell.swift in Sources */,
+				86C1A0201E9490A800266D83 /* NCTMenuButton.swift in Sources */,
 				86E48DE71E8E39A200789F94 /* APIResponseData.swift in Sources */,
+				86D810381E974AB2002631F4 /* VideoViewController.swift in Sources */,
+				86C1A0251E94E27900266D83 /* NCTPlayerViewController.swift in Sources */,
 				86BBE0A21E88A7A8008CBDA9 /* AppDelegate.swift in Sources */,
 				86451DD61E91FE01005C3CEB /* Playlist.swift in Sources */,
-				864F18671E8CF9FF001B5891 /* StringExt.swift in Sources */,
 				864F185D1E8CBEF1001B5891 /* AppInfo.swift in Sources */,
 				864F18621E8CEB5C001B5891 /* ApiConnector.swift in Sources */,
 				8653E4C31E8A0CEE007D642A /* VCIdentifiers.swift in Sources */,
 				862D8CBA1E8B4CF000BD0238 /* NCTGridViewRow.swift in Sources */,
 				864F18641E8CF5BE001B5891 /* AlamofireExt.swift in Sources */,
 				86E48DE91E8E4E4F00789F94 /* Video.swift in Sources */,
+				86D810321E9733E3002631F4 /* StringExt.swift in Sources */,
 				8653E4BF1E8A0832007D642A /* NCTBaseViewController.swift in Sources */,
 				866AF6E21E88B6B6001B92C5 /* HomeViewController.swift in Sources */,
 				866AF6E61E88EF52001B92C5 /* FocusableView.swift in Sources */,

@@ -7,9 +7,33 @@
 //
 
 import UIKit
-
+protocol NCTBaseViewControllerDelegate : class {
+    func requestToFocus(view : UIView)
+}
 class NCTBaseViewController: UIViewController {
 
+    weak var baseDelegate : NCTBaseViewControllerDelegate?
+    weak var viewToFocus: UIView? = nil {
+        didSet {
+            if viewToFocus != nil {
+                let deadlineTime = DispatchTime.now() + 0.1
+                DispatchQueue.main.asyncAfter(deadline: deadlineTime) {
+                    self.setNeedsFocusUpdate();
+                    self.updateFocusIfNeeded();
+                }
+                
+            }
+        }
+    }
+    
+    override var preferredFocusEnvironments: [UIFocusEnvironment] {
+        if viewToFocus != nil {
+            return [viewToFocus!];
+        } else {
+            return [];
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

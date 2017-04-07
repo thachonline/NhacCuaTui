@@ -12,9 +12,7 @@ class NCTGridView: UIView , UITableViewDataSource, UITableViewDelegate , NCTGrid
 
     private let rowReuseIdentifier = "NCTGridViewRow"
     
-
-    
-    private var tableView : UITableView
+    private(set) var tableView : UITableView
     weak var delegate : NCTGridViewDelegate?
     override init(frame: CGRect) {
         self.tableView = UITableView(frame: frame)
